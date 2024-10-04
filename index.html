@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mouli Personal Portfolio</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body.light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .site-nav {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .site-nav ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .site-nav ul li {
+            margin-right: 15px;
+        }
+
+        .site-nav img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .site-nav ul li a {
+            text-decoration: none;
+            color: inherit;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .site-nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .bio {
+            margin: 90px 0 400px 170px;
+            animation: fadeIn 1s;
+            
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hi,
+        .name,
+        .intro {
+            padding-top: 30px;
+            margin: 10px 0;
+        }
+
+        .hi {
+            font-family: "Oswald", sans-serif;
+            font-size: 20px;
+        }
+
+        .name {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 90px;
+            margin-top: -40px;
+            margin-bottom: -50px;
+        }
+
+        .intro {
+            max-width: 700px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: "Oswald", sans-serif;
+            margin-top: 40px;
+            font-size: 36px;
+        }
+
+        .frameworks-container{
+            margin-bottom: 500px;
+        }
+
+        .projects-container{
+            margin-bottom: 500px;
+        }
+        
+
+        .programs,
+        .projects,
+        .contact {
+            text-align: center;
+            margin: 60px 0; /* Increased spacing */
+        }
+
+        .frameworks-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .projects-container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .projects p{
+            color:white;        
+        }
+        
+
+        .frameworks-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            
+        }
+        .projects-container img{
+            width:600px;
+            gap:100px;
+            
+            margin-bottom:10px;
+
+        }
+        .frameworks-container img:hover {
+            transform: scale(1.5);
+        }
+
+        .projects-container img:hover{
+            transform: scale(1);
+        }
+        .download-resume {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: black;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Toggle Button Styles */
+        #toggleTheme {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        body.light-theme .contact-form input,
+        body.light-theme .contact-form textarea {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+
+        body.light-theme .download-resume {
+            background-color: black;
+            color: white;
+        }
+        body.light-theme .projects p{
+            color: black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/mouli-varma-sagi-377861245" target="_blank"><img src="images/LinkedinDP.png" alt="LinkedIn"> LinkedIn</a></li>
+                <li><a href="mailto:moulivarmasagi80@gmail.com" target="_blank"><img src="images/GmailDP.png" alt="Email"> Email</a></li>
+                <li><a href="https://github.com/Varma0604" target="_blank"><img src="images/GithubDP.png" alt="GitHub"> GitHub</a></li>
+            </ul>
+            <button id="toggleTheme">🌙</button>
+        </nav>
+    </header>
+
+    <div class="bio">
+        <div class="hi">Hi, my name is</div>
+        <div class="name" id="name-typing"></div>
+        <div class="intro">
+            I am dedicated to continuous learning and growth across multiple disciplines. This portfolio reflects my commitment to honing my skills and pushing the boundaries of my creativity. Join me on this journey as I share my projects, insights, and the progress I've made along the way!
+        </div>
+    </div>
+
+    <section class="programs">
+        <h3>Frameworks and Languages</h3>
+        <div class="frameworks-container">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+                <img src="images/download.jpeg" alt="JavaScript">
+            </a>
+            <a href="https://www.python.org/doc/" target="_blank">
+                <img src="images/python.png" alt="Python">
+            </a>
+            <a href="https://www.w3schools.com/css/" target="_blank">
+                <img src="images/css.png" alt="CSS">
+            </a>
+            <a href="https://isocpp.org/" target="_blank">
+                <img src="images/c++.png" alt="C++">
+            </a>
+            <a href="https://www.w3.org/html/" target="_blank">
+                <img src="images/html.png" alt="HTML">
+            </a>
+            <a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank">
+                <img src="images/java.png" alt="Java">
+            </a>
+            <a href="https://www.php.net/manual/en/index.php" target="_blank">
+                <img src="images/php.jpeg" alt="PHP">
+            </a>
+            <a href="https://www.postgresql.org/docs/" target="_blank">
+                <img src="images/post.png" alt="PostgreSQL">
+            </a>
+            <a href="https://www.mysql.com/documents/" target="_blank">
+                <img src="images/sql(act).jpeg" alt="MySQL">
+            </a>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h3>Projects</h3>
+        <div class="projects-container">
+            <div class="project">
+                <a href="https://github.com/Varma0604/Adv-TodoList" target="_blank">
+                    <img src="projectimages/todo.png" alt="Adv Todo-List">
+                    <p>Todo-List</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/Chess-AI" target="_blank">
+                    <img src="projectimages/chess.png" alt="chess">
+                    <p>AI Chess</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/Education-Platform" target="_blank">
+                    <img src="projectimages/educationalPlat.png" alt="Edu  Plat">
+                    <p>Educational Platform</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/Personal-Finance-Tracker" target="_blank">
+                    <img src="projectimages/financetracker.png" alt="Finance">
+                    
+                    <p>Finance Tracker</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/FlashCard" target="_blank">
+                    <img src="projectimages/flashcardapp.png" alt="flashcardapp">
+                    <p>FlashCard App</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/Python-Games" target="_blank">
+                    <img src="projectimages/maze.png" alt="maze">
+                    <p>Maze Game</p>
+
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/WebDevProjs" target="_blank">
+                    <img src="projectimages/memorygame.png" alt="memorygame">
+                    <p>Memory Game</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/JavaScript-Projects" target="_blank">
+                    <img src="projectimages/randompass.png" alt="randompass">
+                    <p>Random Password Generator</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/Python-Games" target="_blank">
+                    <img src="projectimages/snake.png" alt="snake">
+                    <p>Snake Game</p>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/Varma0604/JavaScript-Projects" target="_blank">
+                    <img src="projectimages/weather.png" alt="weather">
+                    <p>Weather App</p>
+                </a>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section class="contact">
+        <h3>Contact Me</h3>
+        <form class="contact-form" action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="your_resume.pdf" class="download-resume" download>Download My Resume</a>
+    </section>
+
+    <footer>
+        <p style="text-align: center; margin: 20px 0;">© 2024 Mouli Varma Sagi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const nameElement = document.getElementById('name-typing');
+        const name = 'Mouli Varma Sagi';
+        let index = 0;
+
+        function typeName() {
+            if (index < name.length) {
+                nameElement.textContent += name.charAt(index);
+                index++;
+                setTimeout(typeName, 100);
+            }
+        }
+
+        typeName();
+
+        const toggleThemeButton = document.getElementById('toggleTheme');
+        toggleThemeButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            toggleThemeButton.innerText = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+
+</html>
